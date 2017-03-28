@@ -23,7 +23,7 @@ import sailpoint.tools.GeneralException;
  *
  *
  */
-@Path("EnvCom")
+@Path("envcom")
 @Produces("application/json")
 @Consumes("application/json")
 public class ObjectResource extends BasePluginResource {
