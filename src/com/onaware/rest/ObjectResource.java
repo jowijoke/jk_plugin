@@ -1,6 +1,7 @@
 
 package com.onaware.rest;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -59,7 +60,7 @@ public class ObjectResource extends BasePluginResource {
 
 
     /**
-     * Gets all objects for the currently logged in user.
+     * Gets all objects from the clean iiq instance.
      * @return The ListResult containing the objects.
      * @throws GeneralException
      */
@@ -69,9 +70,9 @@ public class ObjectResource extends BasePluginResource {
     public ListResult getObjects() throws GeneralException {
     	log.debug("Object Resource: getting objects");  
     	ObjectService objService = getObjectService();
-        List<String> objs = objService.getObjects();
-
-        return new ListResult(objs, objs.size());
+        Collection<String> cleanObjs = objService.getCleanObjects();
+        
+        return new ListResult((List) cleanObjs, cleanObjs.size());
         
     }
 
