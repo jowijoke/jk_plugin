@@ -277,6 +277,29 @@ public class ObjectService {
         }
         
         
+        //
+        // Call to get LifeCycle Events(IdentityTrigger) Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/IdentityTrigger?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        
         } catch (Exception e) {
         	log.debug("Exception:" + e.toString());
         }

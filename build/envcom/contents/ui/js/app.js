@@ -15,15 +15,6 @@ compareModule.controller('EnvComController', function(objectService, $uibModal) 
          
     };
     
-    /**
-     * Gets the objects from the server and sets them on the controller.
-     */
-    me.getTodos = function() {
-        getObjs().then(function(objects) {
-            me.obj = objects;
-        });
-    };
-    
     me.listObjClean = function() {
         
         objectService.getObjectsClean();
@@ -68,7 +59,7 @@ compareModule.service('objectService', function($http) {
         getObjects: function() {
             var OBJECTS_URL = PluginHelper.getPluginRestUrl('envcom/objects');
             return $http.get(OBJECTS_URL, config).then(function(response) {
-                return response;
+                return response.data.objects;
             });
         },
         
