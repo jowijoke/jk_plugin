@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin certificationLevel="None" displayName="jk" minSystemVersion="7.1" name="jk" version="0.1">
+  <Attributes>
+    <Map>
+      <entry key="minUpgradableVersion" value="0.1" />
+      <entry key="fullPage">
+        <value>
+          <FullPage title="jk" />
+        </value>
+      </entry>
+      <entry key="restResources">
+        <value>
+          <List>
+          	<String>com.onaware.rest.ObjectResource</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="serviceExecutors">
+      </entry>
+      <entry key="settings">
+      </entry>
+      <entry key="snippets">
+        <value>
+          <List>
+            <Snippet regexPattern=".*" rightRequired="ViewjkIcon">
+              <Scripts>
+                <String>ui/js/snippets/header.js</String>
+              </Scripts>
+              <StyleSheets>
+                <String>ui/css/jk.css</String>
+              </StyleSheets>
+            </Snippet>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Plugin>
+

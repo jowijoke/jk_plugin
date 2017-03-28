@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+
+<ui:composition>
+
+    <div class="container" ng-app="EnvCom" ng-controller="EnvComController as ctrl">
+        <div class="row m-t">
+           <button class="btn btn-danger pull-right" ng-click="ctrl.getObjs()">List Objects</button>
+           <button class="btn btn-info pull-left" ng-click="ctrl.hello()">Hello</button>
+        </div>
+        <div class="row m-t">
+            <div class="panel">
+                <div class="panel-heading bg-light lter">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span class="panel-title"><b>EnvCom</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <form>
+                                <div class="form-group">
+                                    <label for="Class type">Class Type</label>
+                                    <input type="text" class="form-control" id="classType" placeholder="Enter Class type" ng-model="ctrl.name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ObjectName">Object</label>
+                                    <input type="text" pattern="\d+" class="form-control" id="objectName" placeholder="Enter the object name" ng-model="ctrl.object" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="URL">Url</label>
+                                    <input type="text" pattern="\d+" class="form-control" id="Url" placeholder="Enter the Url" ng-model="ctrl.url" />
+                                </div>
+                                 <button type="submit" class="btn btn-info pull-right" ng-click="ctrl.listObjClean()">List Objects</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="#{plugins.requestContextPath}/plugin/jk/ui/js/angular.min.js"></script>
+    <script src="#{plugins.requestContextPath}/plugin/jk/ui/js/ui-bootstrap.min.js"></script>
+    <script src="#{plugins.requestContextPath}/plugin/jk/ui/js/app.js"></script>
+
+</ui:composition>
+
+</body>
+</html>
+
