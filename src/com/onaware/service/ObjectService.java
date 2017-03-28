@@ -46,7 +46,9 @@ public class ObjectService {
     public List<String> getObjects() throws GeneralException{
      
     try {
-       
+       //ensure the list is empty before adding objects.
+    	objName.clear();
+    	
         log.debug("Starting REST client");
         CredentialsProvider provider = new BasicCredentialsProvider();
         UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(iiqUser, iiqPass);
@@ -75,6 +77,206 @@ public class ObjectService {
             log.debug("\nObjectList: " + objName);
      
         }
+        
+        //
+        // Call to get Capability Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Capability?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get CorrelationConfig Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/CorrelationConfig?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get Roles(Bundles) Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Bundle?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get Custom Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Custom?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get ObjectConfig Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/ObjectConfig?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get Policy Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Policy?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get Rule Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Rule?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get UIConfig Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/UIConfig?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        //
+        // Call to get Workflow Objects
+        //
+     
+        iiqRequest = "http://" + iiqIP + ":" + String.valueOf(iiqPort) + "/clean/rest/debug/Workflow?listObjects";
+        log.debug("\nRequest: " + iiqRequest);
+        request = new HttpGet(iiqRequest);
+        response = client.execute(request);
+        rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        line = "";
+        while ((line = rd.readLine()) != null) {
+            JSONObject jsonObject = new JSONObject(line);
+            JSONArray objResponse = (JSONArray) jsonObject.get("objects");
+            
+
+            for(int i=0; i<objResponse.length(); i++){
+            	objName.add(objResponse.getJSONObject(i).getString("name"));
+            }
+            log.debug("\nUpdated ObjectList " + objName);
+     
+        }
+        
+        
         } catch (Exception e) {
         	log.debug("Exception:" + e.toString());
         }

@@ -66,7 +66,7 @@ compareModule.service('objectService', function($http) {
          * @return Promise A promise that resolves with an array of objects.
          */
         getObjects: function() {
-            var OBJECTS_URL = PluginHelper.getPluginRestUrl('envcom/applications');
+            var OBJECTS_URL = PluginHelper.getPluginRestUrl('envcom/objects');
             return $http.get(OBJECTS_URL, config).then(function(response) {
                 return response;
             });

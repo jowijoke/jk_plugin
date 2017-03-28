@@ -1,0 +1,22 @@
+# use glob syntax.
+syntax: glob
+  
+**/.project
+**/*.orig
+**/.classpath
+**/*.settings
+  
+**/obs/*
+**/dist/*
+**/lib/*
+**/bin/*
+**/logs/*
+**/envs/*
+**/ivy/*
+**/plugin/*
+  
+dist/zips/*
+dist/
+  
+**.DS_Store
+/bin/

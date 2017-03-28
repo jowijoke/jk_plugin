@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="build/jk/contents/lib/jk.jar"/>
-	<classpathentry kind="lib" path="build/jk/lib/jk.jar"/>
 	<classpathentry kind="lib" path="/home/johnk/Downloads/identityiq-7.1/integration/TDI/apache-httpcomponents-httpclient-cache.jar"/>
 	<classpathentry kind="lib" path="/home/johnk/Downloads/identityiq-7.1/integration/TDI/apache-httpcomponents-httpcore.jar"/>
 	<classpathentry kind="lib" path="/home/johnk/Downloads/identityiq-7.1/integration/TDI/apache-httpcomponents-httpmime.jar"/>

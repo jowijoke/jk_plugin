@@ -64,7 +64,7 @@ public class ObjectResource extends BasePluginResource {
      * @throws GeneralException
      */
     @GET
-    @Path("applications")
+    @Path("objects")
     @AllowAll
     public ListResult getObjects() throws GeneralException {
     	log.debug("Object Resource: getting objects");  
